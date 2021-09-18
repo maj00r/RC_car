@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="CONNECTION">
+
+        <EditTextPreference
+            android:key="et_ip"
+            android:title="IP address"/>
+        <EditTextPreference
+            android:key="et_port"
+            android:title="Port"/>
+        <EditTextPreference
+            android:key="et_pause"
+            android:title="Sender delay"
+            android:summary="Delay between sending UDP packets in milliseconds"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

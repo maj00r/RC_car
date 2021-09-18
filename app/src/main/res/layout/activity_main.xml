@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/layout">
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="start|center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/throttle"
+        app:layout_constraintStart_toEndOf="@+id/turn_angle"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/R_obey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="R"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/N_obey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="N"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/D_obey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="D"
+            android:textSize="24sp" />
+
+    </RadioGroup>
+
+    <com.example.rc_car.VerticalSeekBar
+        android:id="@+id/throttle"
+        android:layout_width="120dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:background="@null"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:progress="0"
+        android:progressDrawable="@drawable/custom_progress"
+        android:thumb="@drawable/custom_thumb"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    https://github.com/MarcinMoskala/ArcSeekBar-->
+<!--    Copyright 2017 Marcin Moskała-->
+
+<!--    Licensed under the Apache License, Version 2.0 (the "License");-->
+<!--    you may not use this file except in compliance with the License.-->
+<!--    You may obtain a copy of the License at-->
+
+<!--    http://www.apache.org/licenses/LICENSE-2.0-->
+
+<!--    Unless required by applicable law or agreed to in writing, software-->
+<!--    distributed under the License is distributed on an "AS IS" BASIS,-->
+<!--    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.-->
+    <com.marcinmoskala.arcseekbar.ArcSeekBar
+        android:id="@+id/turn_angle"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="32dp"
+        app:maxProgress="510"
+        app:progress="255"
+        app:progressColor="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/radioGroup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:progressBackgroundColor="@android:color/darker_gray"
+        app:progressBackgroundWidth="15dp"
+        app:thumb="@drawable/custom_thumb"
+        android:clickable="true"
+        android:focusable="true"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
